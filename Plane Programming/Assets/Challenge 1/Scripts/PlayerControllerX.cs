@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControllerX : MonoBehaviour
 {
     public float speed = 5.0f;
-    public float rotationSpeed = 10.0f;
+    public float rotationSpeed = 2.0f;
     public float verticalInput;
     //public float forwardInput;
     
@@ -28,6 +28,6 @@ public class PlayerControllerX : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
         // tilt the plane up/down based on up/down arrow keys
-       transform.Rotate(Vector3.left, verticalInput);
+       transform.Rotate(Vector3.left, (verticalInput * rotationSpeed));
     }
 }
